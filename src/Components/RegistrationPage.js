@@ -47,7 +47,7 @@ const Input = styled.input`
   font-size: 20px;
   font-weight: 400;
   width: 330px;
-  height: 60px;
+  height: 50px;
   margin-bottom: 10px;
   ::placeholder {
     padding: 0 20px;

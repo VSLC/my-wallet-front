@@ -1,25 +1,20 @@
 import styled from "styled-components";
-import logo from "../Assets/logo.png";
-
-const LoginPage = () => {
+const MoneyOutPage = () => {
   return (
     <>
       <Container>
-        <Logo>
-          <img src={logo} alt="logo"></img>
-        </Logo>
+        <Header>Nova Saída</Header>
         <form>
-          <Input placeholder="email"></Input>
-          <Input placeholder="senha"></Input>
+          <Input placeholder="Valor"></Input>
+          <Input placeholder="descrição"></Input>
         </form>
-        <Button>Entrar</Button>
-        <SignUp>Primeira vez? Cadastre-se!</SignUp>
+        <Button>Nova Saída</Button>
       </Container>
     </>
   );
 };
 
-export default LoginPage;
+export default MoneyOutPage;
 
 const Container = styled.div`
   @media (max-width: 600px) {
@@ -27,34 +22,38 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 `;
 
-const Logo = styled.div`
-  margin-bottom: 30px;
+const Header = styled.div`
+  margin-top: 25px;
+  margin-bottom: 40px;
+  margin-right: 170px;
+  color: #fff;
+  display: flex;
+  font-size: 26px;
+  font-weigth: bold;
+  justify-content: flex-start;
 `;
-
 const Input = styled.input`
   display: flex;
   justify-content: center;
-  align-items: center;
   bacground-color: #fff;
   color: #000;
   font-size: 20px;
   font-weight: 400;
-  width: 330px;
+  width: 326px;
   height: 50px;
   margin-bottom: 10px;
   ::placeholder {
     padding: 0 20px;
   }
 `;
-
 const Button = styled.button`
   margin: 20px 0;
-  width: 330px;
+  width: 326px;
   height: 46px;
   border: none;
   border-radius: 5px;
@@ -63,10 +62,4 @@ const Button = styled.button`
   font-size: 20px;
 
   background-color: #a328d6;
-`;
-
-const SignUp = styled.p`
-  color: #fff;
-  font-size: 15px;
-  font-weigth: bold;
 `;
