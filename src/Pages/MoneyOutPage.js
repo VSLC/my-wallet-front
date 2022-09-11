@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import axios from 'axios'
-import dayjs from 'dayjs'
-import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
+import dayjs from 'dayjs';
 
-import { useState } from 'react'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const MoneyOutPage = () => {
   const [value, setValue] = useState('');
   const [description, setDescription] = useState('');
@@ -29,9 +30,8 @@ const MoneyOutPage = () => {
     const response = axios.post('http://localhost:5000/moneyout', moneyObj, config);
     response.then(() => {
       navigate('/home');
-
     }).catch((error) => {
-      console.log(error);
+      console.log(error.message);
     })
   }
 

@@ -65,15 +65,15 @@ const FinancePage = () => {
               <ion-icon name="log-out-outline" onClick={logOut}></ion-icon>
             </div>
           </Header>
-          <Finance totalBalance={totalBalance}>
+          <Finance>
             <FinanceWrapper>
               {hasFinance ?
                 arrayFinance.map((elementFinance, index) => <UserFinanceInputs key={index} day={elementFinance.currentDay} description={elementFinance.description} price={parseFloat(elementFinance.value)} type={elementFinance.type} />) : <p>Não há registros de entrada ou saída</p>}
             </FinanceWrapper>
-            <div className="totalBalance">
+            <TotalFinance totalBalance={totalBalance}>
               <p>SALDO</p>
               <p className="totalBalanceElement">{totalBalance}</p>
-            </div>
+            </TotalFinance>
           </Finance>
           <InAndOutDivs>
             <Link to='/moneyin' style={{ textDecoration: "none" }}>
@@ -127,7 +127,7 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-const Finance = styled.div` 
+const Finance = styled.div`
   position: relative;
   overflow-y:scroll;
   position: relative;
@@ -143,7 +143,9 @@ const Finance = styled.div`
     align-items:center;
     height: 450px;
   }
-  .totalBalance{
+`;
+
+const TotalFinance = styled.div`
     position: absolute;
     bottom: 10px;
     left: 0;
@@ -157,9 +159,8 @@ const Finance = styled.div`
       font-size:17px;
     }
     .totalBalanceElement{
-      color: ${props => props.totalBalance ? "green" : "red"};
+      color: ${props => props.totalBalance >= 0 ? "green" : "red"};
     }
-  }
 `;
 
 const FinanceWrapper = styled.div`
