@@ -31,7 +31,7 @@ const LoginPage = () => {
         </Logo>
         <Form>
           <Input placeholder="email" onChange={(e) => setUserEmail(e.target.value)}  ></Input>
-          <Input placeholder="senha" onChange={(e) => setUserPassword(e.target.value)} ></Input>
+          <Input placeholder="senha" type="password" onChange={(e) => setUserPassword(e.target.value)} ></Input>
           <Button onClick={userLogin}>
             Entrar
           </Button>

@@ -37,8 +37,8 @@ const RegistrationPage = () => {
         <form>
           <Input placeholder="nome" onChange={e => { setName(e.target.value) }}></Input>
           <Input placeholder="email" onChange={e => { setEmail(e.target.value) }}></Input>
-          <Input placeholder="senha" onChange={e => { setPassword(e.target.value) }}></Input>
-          <Input placeholder="confirme a senha" onChange={e => { setPasswordConfirm(e.target.value) }}></Input>
+          <Input placeholder="senha" type="password" onChange={e => { setPassword(e.target.value) }}></Input>
+          <Input placeholder="confirme a senha" type="password" onChange={e => { setPasswordConfirm(e.target.value) }}></Input>
         </form>
         <Button onClick={RegisterUser}>Cadastrar</Button>
         <SignIn>
