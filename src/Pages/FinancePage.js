@@ -5,18 +5,15 @@ import UserFinanceInputs from '../Components/UserFinanceInput'
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 
+import HeaderUser from "../Components/Header"
+
 import axios from 'axios'
 
-const financeInputs = [{ day: '22/05', description: 'jantar', price: -500.44 },
-{ day: '22/05', description: 'almoço', price: 2000 },
-{ day: '22/05', description: 'festa', price: 2000 }]
 
 const FinancePage = () => {
   const [hasFinance, setHasFinance] = useState(true);
   const [arrayFinance, setArrayFinance] = useState([]);
   let userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  console.log(userInfo)
-  const navigate = useNavigate()
 
   const config = {
     headers: {
@@ -50,25 +47,20 @@ const FinancePage = () => {
     return previousValue + currentValue;
   }, 0)
 
-  const logOut = () => {
-    localStorage.clear();
-    navigate("/")
-  }
-
   return (
     <>
       <Container>
         <MainPage>
-          <Header>
-            <div>Olá , {userInfo.userName}</div>
-            <div>
-              <ion-icon name="log-out-outline" onClick={logOut}></ion-icon>
-            </div>
-          </Header>
+          <HeaderUser />
           <Finance>
             <FinanceWrapper>
               {hasFinance ?
-                arrayFinance.map((elementFinance, index) => <UserFinanceInputs key={index} day={elementFinance.currentDay} description={elementFinance.description} price={parseFloat(elementFinance.value)} type={elementFinance.type} />) : <p>Não há registros de entrada ou saída</p>}
+                arrayFinance.map((elementFinance, index) =>
+                  <UserFinanceInputs key={index}
+                    day={elementFinance.currentDay}
+                    description={elementFinance.description}
+                    price={parseFloat(elementFinance.value)}
+                    type={elementFinance.type} />) : <p className="paragraphWithoutInputs">Não há registros de entrada ou saída</p>}
             </FinanceWrapper>
             <TotalFinance totalBalance={totalBalance}>
               <p>SALDO</p>
@@ -116,16 +108,7 @@ const MainPage = styled.div`
   width: 375px;
 `;
 
-const Header = styled.div`
-  padding: 0 30px;
-  margin-top: 25px;
-  margin-bottom: 20px;
-  color: #fff;
-  display: flex;
-  font-size: 26px;
-  font-weight: bold;
-  justify-content: space-between;
-`;
+
 
 const Finance = styled.div`
   position: relative;
@@ -166,6 +149,12 @@ const TotalFinance = styled.div`
 const FinanceWrapper = styled.div`
   overflow-y:hidden;
   margin: 20px 0 100px 0;
+  .paragraphWithoutInputs{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
 `
 
 const InAndOutDivs = styled.div`

@@ -17,7 +17,6 @@ const LoginPage = () => {
     }
     const response = axios.post('http://localhost:5000/', user);
     response.then((res) => {
-      console.log(res.data);
       localStorage.setItem("userInfo", JSON.stringify(res.data));
       navigate('/home');
 
