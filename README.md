@@ -18,8 +18,8 @@ You can see your total balance.
 https://user-images.githubusercontent.com/62071032/212147774-c1d5a434-8f4e-4b35-a965-8f3c5e39a8cf.mp4
 
 ## Use It
-To use the application, go to : [my-wallet](https://mywallet-front-voller.vercel.app/)
-The link of deployed api is [my-wallet-backend](https://my-wallet-back-p2c4.onrender.com/)
+To use my-wallet, go to : [my-wallet](https://mywallet-front-voller.vercel.app/)</br>
+The link of deployed api is: [my-wallet-backend](https://my-wallet-back-p2c4.onrender.com/)
 ## Technologies
 
 - [React.js](https://beta.reactjs.org/) ✔️
