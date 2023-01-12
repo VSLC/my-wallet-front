@@ -20,7 +20,7 @@ const RegistrationPage = () => {
       password,
       confirmPassword
     }
-    const response = axios.post('http://localhost:5000/register', userRegisterObj)
+    const response = axios.post('https://my-wallet-back-p2c4.onrender.com/register', userRegisterObj)
     response.then((res) => {
       alert('usuário criado com sucesso')
       navigate("/")

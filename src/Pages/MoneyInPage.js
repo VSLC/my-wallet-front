@@ -27,7 +27,7 @@ const MoneyInPage = () => {
         'Authorization': `Bearer ${userInfo.token}`
       }
     };
-    const response = axios.post('http://localhost:5000/moneyin', moneyObj, config);
+    const response = axios.post('https://my-wallet-back-p2c4.onrender.com/moneyin', moneyObj, config);
     response.then(() => {
       navigate('/home');
 

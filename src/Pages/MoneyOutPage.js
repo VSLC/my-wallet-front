@@ -27,7 +27,7 @@ const MoneyOutPage = () => {
         'Authorization': `Bearer ${userInfo.token}`
       }
     };
-    const response = axios.post('http://localhost:5000/moneyout', moneyObj, config);
+    const response = axios.post('https://my-wallet-back-p2c4.onrender.com/moneyout', moneyObj, config);
     response.then(() => {
       navigate('/home');
     }).catch((error) => {

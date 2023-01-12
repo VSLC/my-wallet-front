@@ -15,7 +15,7 @@ const LoginPage = () => {
       email,
       password
     }
-    const response = axios.post('http://localhost:5000/', user);
+    const response = axios.post('https://my-wallet-back-p2c4.onrender.com/', user);
     response.then((res) => {
       localStorage.setItem("userInfo", JSON.stringify(res.data));
       navigate('/home');
