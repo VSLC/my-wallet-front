@@ -22,7 +22,7 @@ const FinancePage = () => {
   }
 
   const handleGetFinanceArray = () => {
-    const response = axios.get('http://localhost:5000/home', config)
+    const response = axios.get('https://my-wallet-back-p2c4.onrender.com/home', config)
     response.then((res) => {
       setArrayFinance(res.data);
       if (res.data.length === 0) {
